@@ -1,0 +1,143 @@
+{
+  "type": "page",
+  "title": "查看详情  用例id为: ${params.id}",
+  "toolbar": [
+    {
+      "type": "button",
+      "actionType": "link",
+      "link": "/index/usecases",
+      "label": "返回列表",
+      "id": "u:db0b4771ec76"
+    }
+  ],
+  "remark": null,
+  "body": [
+    {
+      "type": "form",
+      "initApi": "${API_ADD}/getonecases/${params.id}",
+      "id": "u:e8f6edf4a36e",
+      "body": [
+        {
+          "type": "static",
+          "name": "id",
+          "label": "ID",
+          "id": "u:871dbc13c847",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:7c1343ce3334"
+        },
+        {
+          "type": "static",
+          "name": "casename",
+          "label": "用例名称",
+          "id": "u:871dbc13c837",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:7c1443ce3634"
+        },
+        {
+          "type": "static",
+          "name": "requestway",
+          "label": "请求方法",
+          "id": "u:da4744645726",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:9ebf19f01157"
+        },
+        {
+          "type": "static",
+          "name": "casedir",
+          "label": "用例目录",
+          "id": "u:44992b0df72a",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:30b502f3d95e"
+        },
+        {
+          "type": "static",
+          "name": "uri",
+          "label": "接口uri",
+          "id": "u:5cd0ce37a1c0",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:9d83aba69d13"
+        },
+        {
+          "type": "static",
+          "name": "urlparams",
+          "label": "url参数",
+          "id": "u:e551982473fb",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:f47ed9659d5e"
+        },
+        {
+          "type": "static",
+          "name": "queryparams",
+          "label": "query参数",
+          "id": "u:e2b0517a37a2",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:9ebf19f01157"
+        },
+        {
+          "type": "static",
+          "id": "u:154027bb649a",
+          "name": "bodyparams",
+          "label": "body参数",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:fac6d6f41527"
+        },
+        {
+          "type": "static",
+          "id": "u:154027bb649a",
+          "name": "respparams",
+          "label": "返回参数",
+          "quickEdit": false,
+          "popOver": false,
+          "copyable": false
+        },
+        {
+          "type": "divider",
+          "id": "u:fac6d6f41527"
+        }
+      ],
+      "actions": [],
+      "feat": "View"
+    }
+  ],
+  "id": "u:eecad023beae"
+}

@@ -1,0 +1,158 @@
+{
+  "status": 0,
+  "msg": "",
+  "data": {
+    "pages": [
+      {
+        "label": "Home",
+        "url": "/",
+        "redirect": "/index"
+      },
+      {
+        "label": "接口管理",
+        "children": [
+          {
+            "label": "接口用例管理",
+            "url": "/index",
+            "icon": "fa fa-cube",
+            "schema": {
+              "type": "page",
+              "title": "接口用例管理",
+              "body": "对接口用例进行管理，并且可以选取部分用例进行自动化执行，判断接口用例状态"
+            },
+            "children": [
+              {
+                "label": "接口用例库",
+                "icon": "fa fa-list",
+                "url": "/index/usecases",
+                "schemaApi": "get:/pages/interface_cases/api_cases_ku.json"
+              },
+              {
+                "label": "业务流组合",
+                "url": "/index/cases",
+                "icon": "fa fa-ticket",
+                "schemaApi": "get:/pages/toge_cases/toge_cases.json"
+              },
+              {
+                "label": "执行计划",
+                "url": "/index/caserun",
+                "icon": "fa fa-cogs",
+                "schemaApi": "get:/pages/runplans/runplans.json"
+              },
+              {
+                "label": "test",
+                "url": "/index/test123",
+                "icon": "fa fa-window-restore",
+                "schemaApi": "get:/pages/toge_cases/test.json"
+              },
+              {
+                "label": "查看用例",
+                "url": "/index/:id",
+                "schemaApi": "get:/pages/interface_cases/crud-view.json"
+              },
+              {
+                "label": "修改用例",
+                "url": "/index/:id/edit",
+                "schemaApi": "get:/pages/interface_cases/crud-edit.json"
+              },
+              {
+                "label": "查看执行计划",
+                "url": "/index/run/:id",
+                "schemaApi": "get:/pages/runplans/crud-view.json"
+              },
+              {
+                "label": "修改执行计划",
+                "url": "/index/run/:id/edit",
+                "schemaApi": "get:/pages/runplans/crud-edit.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "功能管理",
+        "children": [
+          {
+            "label": "功能用例",
+            "url": "funccases",
+            "icon": "fa fa-indent",
+            "schema": {
+              "type": "page",
+              "title": "功能用例",
+              "body": "功能用例"
+            },
+            "children": [
+              {
+                "label": "用例生成",
+                "icon": "fa fa-tablet",
+                "url": "generatecases",
+                "schema": {
+                  "type": "page",
+                  "title": "用例生成",
+                  "body": ""
+                }
+              }
+            ]
+          }]},
+
+      {
+        "label": "工具箱",
+        "children": [
+          {
+            "label": "工具",
+            "url": "tools",
+            "icon": "fa fa-medkit",
+            "schema": {
+              "type": "page",
+              "title": "工具集合",
+              "body": "工具集合"
+            },
+            "children": [
+              {
+                "label": "时间戳转换",
+                "icon": "fa fa-safari",
+                "url": "timesconvert",
+                "schemaApi": "get:/pages/tools/times.json"
+              },
+              {
+                "label": "JSON可视化",
+                "icon": "fa fa-file-text-o",
+                "url": "jsondd",
+                "schemaApi": "get:/pages/tools/getjson.json"
+              },
+              {
+                "label": "外部ai链接",
+                "icon": "fa fa-google-plus",
+                "url": "openurl",
+                "schemaApi": "get:/pages/tools/public_url.json"
+              }
+            ]
+          }]},
+      {
+        "label": "",
+        "children": [
+          {
+            "label": "template",
+            "url": "a1",
+            "icon": "fa fa-opera",
+            "schema": {
+              "type": "page",
+              "title": "a1",
+              "body": "a1"
+            },
+            "children": [
+              {
+                "label": "a2",
+                "icon": "fa fa-list",
+                "url": "a2",
+                "schema": {
+                  "type": "page",
+                  "title": "a2",
+                  "body": "a2"
+                }
+              }
+            ]
+          }]}
+    ]
+  }
+}

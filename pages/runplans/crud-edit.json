@@ -1,0 +1,51 @@
+{
+    "type": "page",
+    "title": "修改 ${params.id}",
+    "remark": null,
+    "toolbar": [
+      {
+        "type": "button",
+        "actionType": "link",
+        "link": "/index/caserun",
+        "label": "返回列表"
+      }
+    ],
+    "body": [
+      {
+        "type": "form",
+        "initApi": "${API_ADD}/getonecases/${params.id}",
+        "api": "update api,will auto submit",
+        "redirect": "/index/caserun",
+        "controls": [
+          {
+            "type": "text",
+            "name": "id",
+            "label": "ID",
+            "required": true
+          },
+          {
+            "type": "divider",
+            "id": "u:7c1343ce3334"
+          },
+          {
+            "type": "text",
+            "name": "liuname",
+            "label": "执行计划名称",
+            "required": true
+          },
+          {
+            "type": "divider",
+            "id": "u:7c1443ce3634"
+          },
+          {
+            "type": "text",
+            "name": "liuids",
+            "label": "业务流id集合",
+            "required": true
+          }
+        ]
+        
+      }
+    ]
+  }
+  

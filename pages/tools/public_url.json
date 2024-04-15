@@ -1,0 +1,82 @@
+{
+    "type": "page",
+    "id": "u:03bb5c23b186",
+    "body": [
+      {
+        "type": "panel",
+        "title": "POE链接地址",
+        "body": [
+          {
+            "type": "link",
+            "value": "https://poe.com/",
+            "id": "u:7d002bcb67d0",
+            "body": "https://poe.com/"
+          }
+        ],
+        "id": "u:947621774955",
+        "actions": [],
+        "affixFooter": false
+      },
+      {
+        "type": "panel",
+        "title": "ChatGPT链接地址",
+        "body": [
+          {
+            "type": "link",
+            "value": "https://chat.openai.com/",
+            "id": "u:d7c854e75917",
+            "body": "https://chat.openai.com/"
+          }
+        ],
+        "id": "u:ea44a6902102",
+        "actions": [],
+        "affixFooter": false
+      },
+      {
+        "type": "panel",
+        "title": "OpenRoute链接地址",
+        "body": [
+          {
+            "type": "link",
+            "value": "https://openrouter.ai/playground?models=openai/gpt-3.5-turbo,gryphe/mythomax-l2-13b,mistralai/mistral-7b-instruct,google/gemma-7b-it:free,openchat/openchat-7b:free\n",
+            "id": "u:6aa81c030492",
+            "body": "https://openrouter.ai/playground?models=openai/gpt-3.5-turbo,gryphe/mythomax-l2-13b,mistralai/mistral-7b-instruct,google/gemma-7b-it:free,openchat/openchat-7b:free\n"
+          }
+        ],
+        "id": "u:99fbd3e9f85c",
+        "actions": [],
+        "affixFooter": false
+      }
+    ],
+    "asideResizor": false,
+    "pullRefresh": {
+      "disabled": true
+    },
+    "themeCss": {
+      "baseControlClassName": {
+        "padding-and-margin:default": {
+          "marginTop": "var(--sizes-base-9)"
+        },
+        "border:default": {
+          "top-border-style": "var(--borders-style-1)",
+          "left-border-style": "var(--borders-style-1)",
+          "right-border-style": "var(--borders-style-1)",
+          "bottom-border-style": "var(--borders-style-1)"
+        }
+      },
+      "bodyControlClassName": {
+        "border:default": {
+          "top-border-style": "var(--borders-style-1)",
+          "left-border-style": "var(--borders-style-1)",
+          "right-border-style": "var(--borders-style-1)",
+          "bottom-border-style": "var(--borders-style-1)"
+        },
+        "padding-and-margin:default": {
+          "marginTop": "var(--sizes-base-2)",
+          "marginRight": "var(--sizes-base-2)",
+          "marginBottom": "var(--sizes-base-2)",
+          "marginLeft": "var(--sizes-base-2)"
+        }
+      }
+    }
+  }

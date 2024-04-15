@@ -1,0 +1,61 @@
+{
+    "type": "page",
+    "title": "查看详情  执行计划id为: ${params.id}",
+    "toolbar": [
+      {
+        "type": "button",
+        "actionType": "link",
+        "link": "/index/caserun",
+        "label": "返回列表",
+        "id": "u:db0bec76"
+      }
+    ],
+    "remark": null,
+    "body": [
+      {
+        "type": "form",
+        "initApi": "${API_ADD}/getonecases/${params.id}",
+        "id": "u:e8f6edf4a36e",
+        "body": [
+          {
+            "type": "static",
+            "name": "id",
+            "label": "ID",
+            "id": "u:871dbc13c847",
+            "quickEdit": false,
+            "popOver": false,
+            "copyable": false
+          },
+          {
+            "type": "divider",
+            "id": "u:7c1343ce3334"
+          },
+          {
+            "type": "static",
+            "name": "liuname",
+            "label": "执行计划名称",
+            "id": "u:871dbc13c837",
+            "quickEdit": false,
+            "popOver": false,
+            "copyable": false
+          },
+          {
+            "type": "divider",
+            "id": "u:7c1443ce3634"
+          },
+          {
+            "type": "static",
+            "name": "liuids",
+            "label": "业务流id集合",
+            "id": "u:da4744645726",
+            "quickEdit": false,
+            "popOver": false,
+            "copyable": false
+          }
+        ],
+        "actions": [],
+        "feat": "View"
+      }
+    ],
+    "id": "u:eecad023beae"
+}

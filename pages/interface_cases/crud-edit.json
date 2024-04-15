@@ -1,0 +1,110 @@
+{
+  "type": "page",
+  "title": "修改 ${params.id}",
+  "remark": null,
+  "toolbar": [
+    {
+      "type": "button",
+      "actionType": "link",
+      "link": "/index/usecases",
+      "label": "返回列表"
+    }
+  ],
+  "body": [
+    {
+      "type": "form",
+      "initApi": "${API_ADD}/getonecases/${params.id}",
+      "api": "update api,will auto submit",
+      "redirect": "/index/usecases",
+      "controls": [
+        {
+          "type": "text",
+          "name": "id",
+          "label": "ID",
+          "required": true
+        },
+        {
+          "type": "divider",
+          "id": "u:7c1343ce3334"
+        },
+        {
+          "type": "text",
+          "name": "casename",
+          "label": "用例名称",
+          "required": true
+        },
+        {
+          "type": "divider",
+          "id": "u:7c1443ce3634"
+        },
+        {
+          "type": "text",
+          "name": "requestway",
+          "label": "请求方法",
+          "required": true
+        },
+        {
+          "type": "divider",
+          "id": "u:9ebf19f01157"
+        },
+        {
+          "type": "text",
+          "name": "casedir",
+          "label": "用例目录",
+          "required": true
+        },
+        {
+          "type": "divider",
+          "id": "u:30b502f3d95e"
+        },
+        {
+          "type": "text",
+          "name": "uri",
+          "label": "接口uri",
+          "required": true
+        },
+        {
+          "type": "divider",
+          "id": "u:9d83aba69d13"
+        },
+        {
+          "type": "text",
+          "name": "urlparams",
+          "label": "url参数"
+        },
+        {
+          "type": "divider",
+          "id": "u:f47ed9659d5e"
+        },
+        {
+          "type": "text",
+          "name": "queryparams",
+          "label": "query参数"
+        },
+        {
+          "type": "divider",
+          "id": "u:9ebf19f01157"
+        },
+        {
+          "type": "text",
+          "name": "bodyparams",
+          "label": "body参数"
+        },
+        {
+          "type": "divider",
+          "id": "u:fac6d6f41527"
+        },
+        {
+          "type": "text",
+          "name": "respparams",
+          "label": "响应参数"
+        },
+        {
+          "type": "divider",
+          "id": "u:fac6d6f41527"
+        }
+      ]
+      
+    }
+  ]
+}

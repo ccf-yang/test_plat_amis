@@ -1,0 +1,488 @@
+{
+    "type": "page",
+    "id": "u:f558f4c2f7c8",
+    "body": [
+      {
+        "type": "crud",
+        "name": "sample",
+        "id": "u:47e8568d5a58",
+        "api": "${API_ADD}/getapis?page=${page}&perPage=${perPage}&keywords=${keywords}",
+        "filter": {
+          "title": "",
+          "mode": "inline",
+          "wrapWithPanel": false,
+          "submitText": "",
+          "className": "m-b-sm",
+          "id": "u:fa41fd9adbad",
+          "feat": "Insert",
+          "body": [
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "container",
+                  "body": [
+                    {
+                      "type": "button",
+                      "label": "新增用例",
+                      "actionType": "dialog",
+                      "dialog": {
+                        "size": "lg",
+                        "title": "新增用例",
+                        "closeOnEsc": true,
+                        "actions": [
+                          {
+                            "label": "取消",
+                            "actionType": "close",
+                            "type": "button"
+                          },
+                          {
+                            "label": "确认,点击确认会自动将form内容以name的json上报",
+                            "actionType": "confirm",
+                            "type": "button",
+                            "level": "primary"
+                          }
+                        ],
+                        "body": {
+                          "type": "form",
+                          "api": "${API_ADD}/add",
+                          "title": "常规模式",
+                          "mode": "normal",
+                          "body": [
+                            {
+                              "type": "input-text",
+                              "name": "casename",
+                              "label": "用例名称",
+                              "required": true,
+                              "placeholder": "请输入用例名称"
+                            },
+                            {"type": "input-text",
+                              "name": "requestway",
+                              "label": "请求方法",
+                              "required": true,
+                              "placeholder": "请输入请求方法"
+                            },
+                            {"type": "input-text",
+                              "name": "casedir",
+                              "label": "用例目录",
+                              "required": true,
+                              "placeholder": "请输入用例目录"
+                            },
+                            {"type": "input-text",
+                              "name": "uri",
+                              "label": "接口uri",
+                              "required": true,
+                              "placeholder": "请输入接口uri"
+                            },
+                            {"type": "input-text",
+                              "name": "urlparams",
+                              "label": "url参数",
+                              "required": false,
+                              "placeholder": "请输入接口uri"
+                            },
+                            {"type": "input-text",
+                              "name": "queryparams",
+                              "label": "query参数",
+                              "required": false,
+                              "placeholder": "请输入接口uri"
+                            },
+                            {"type": "input-text",
+                              "name": "bodyparams",
+                              "label": "body参数",
+                              "required": false,
+                              "placeholder": "请输入接口uri"
+                            },
+                            {"type": "input-text",
+                              "name": "respparams",
+                              "label": "响应参数",
+                              "required": false,
+                              "placeholder": "请输入接口uri"
+                            }
+                        ]
+                        }
+                      },
+                      "id": "u:d5a99a6cbb90",
+                      "themeCss": {
+                        "className": {
+                          "font:default": {
+                            "color": "var(--colors-neutral-fill-11)"
+                          },
+                          "padding-and-margin:default": {
+                            "marginRight": "var(--sizes-base-10)"
+                          }
+                        }
+                      },
+                      "level": "primary"
+                    },
+                    {
+                      "type": "input-file",
+                      "label": "",
+                      "onEvent": {
+                        "success": {
+                          "weight": 0,
+                          "actions": [
+                            {
+                              "ignoreError": false,
+                              "actionType": "toast",
+                              "args": {
+                                "msgType": "success",
+                                "position": "top-right",
+                                "closeButton": true,
+                                "showIcon": true,
+                                "msg": "用例导入成功！",
+                                "className": "theme-toast-action-scope"
+                              }
+                            },
+                            {
+                              "ignoreError": false,
+                              "actionType": "refresh"
+                            }
+                          ]
+                        },
+                        "fail": {
+                          "weight": 0,
+                          "actions": [
+                            {
+                              "ignoreError": false,
+                              "actionType": "toast",
+                              "args": {
+                                "msgType": "error",
+                                "position": "top-right",
+                                "closeButton": true,
+                                "showIcon": true,
+                                "msg": "导入失败！",
+                                "className": "theme-toast-action-scope"
+                              }
+                            },
+                            {
+                              "ignoreError": false,
+                              "actionType": "refresh"
+                            }
+                          ]
+                        }
+                      },
+                      "id": "u:726a711bf630",
+                      "autoUpload": true,
+                      "proxy": true,
+                      "uploadType": "fileReceptor",
+                      "name": "file",
+                      "btnLabel": "用例导入",
+                      "multiple": false,
+                      "useChunk": false,
+                      "accept": "",
+                      "drag": false,
+                      "description": "",
+                      "remark": {
+                        "icon": "fa fa-question-circle",
+                        "trigger": [
+                          "hover"
+                        ],
+                        "className": "Remark--warning",
+                        "placement": "top",
+                        "content": "导入的用例需要是apifox导入的openapi3.1版本的json文件"
+                      },
+                      "mode": "inline",
+                      "btnUploadClassName": "b-primary"
+                    }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "flex",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexWrap": "nowrap",
+                    "justifyContent": "flex-end"
+                  },
+                  "wrapperBody": false,
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:1175fb79e741",
+                  "themeCss": {
+                    "baseControlClassName": {
+                      "padding-and-margin:default": {
+                        "marginRight": "var(--sizes-base-10)"
+                      }
+                    }
+                  }
+                }
+              ],
+              "style": {
+                "position": "relative"
+              },
+              "id": "u:198b9ec8dccf"
+            }
+          ],
+          "onEvent": {
+            "click": {
+              "weight": 0,
+              "actions": []
+            }
+          }
+        },
+        "bulkActions": [
+          {
+            "type": "button",
+            "label": "添加用例组合",
+            "id": "u:d23f57476bc5",
+            "actionType": "dialog",
+            "dialog": {
+                "size": "lg",
+                "title": "新增用例组合",
+                "closeOnEsc": true,
+                "actions": [
+                  {
+                    "label": "取消",
+                    "actionType": "close",
+                    "type": "button"
+                  },
+                  {
+                    "label": "确认",
+                    "actionType": "confirm",
+                    "type": "button",
+                    "level": "primary"
+                  }
+                ],
+                "body": {
+                  "type": "form",
+                  "api": "${API_ADD}",
+                  "title": "常规模式",
+                  "mode": "normal",
+                  "body": [
+                    {
+                        "type": "input-text",
+                        "name": "casestogether",
+                        "label": "用例组合名称",
+                        "required": true,
+                        "placeholder": "请输入用例组合名称"
+                    },
+                    {
+                      "type": "input-text",
+                      "name": "choosedids",
+                      "label": "选中的组合用例id (如果不正确请重新修改)",
+                      "required": false,
+                      "value": "${ids}"
+                    }
+            ]}}},
+          {
+            "label": "批量删除",
+            "type": "button",
+            "id": "u:14dbfe60909e",
+            "confirmText": "确认删除选中内容吗？",
+            "actionType": "ajax",
+            "api": "delete:${API_ADD}/apideletes/${ids}"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "id": "u:2c2dab233726"
+          },
+          {
+            "name": "casename",
+            "width": 150,
+            "label": "用例名称",
+            "sortable": true,
+            "id": "u:cfe680fd6c40",
+            "placeholder": "-"
+          },
+          {
+            "name": "requestway",
+            "label": "请求方法",
+            "width": "",
+            "sortable": true,
+            "id": "u:bd58b3b802f0",
+            "placeholder": "-"
+          },
+          {
+            "name": "casedir",
+            "label": "用例目录",
+            "sortable": true,
+            "id": "u:db9c405239d0",
+            "placeholder": "-"
+          },
+          {
+            "name": "uri",
+            "label": "接口uri",
+            "sortable": true,
+            "id": "u:b0b3fe9b9937",
+            "placeholder": "-"
+          },
+          {
+            "name": "urlparams",
+            "label": "url参数",
+            "id": "u:8234fcc7e258",
+            "placeholder": "-",
+            "className": "word-break "
+          },
+          {
+            "name": "queryparams",
+            "label": "query参数",
+            "id": "u:f28cd048df60",
+            "placeholder": "-",
+            "className": "word-break "
+          },
+          {
+            "name": "bodyparams",
+            "label": "body参数",
+            "id": "u:b74239f163d4",
+            "placeholder": "-",
+            "className": "word-break "
+          },
+          {
+            "name": "respparams",
+            "label": "响应参数",
+            "id": "u:2c2e8aee6e4f",
+            "placeholder": "-",
+            "className": "word-break "
+          },
+          {
+            "type": "operation",
+            "label": "操作",
+            "width": 250,
+            "buttons": [
+              {
+                "type": "button-group",
+                "buttons": [
+                  {
+                    "type": "button",
+                    "label": "查看",
+                    "level": "primary",
+                    "actionType": "link",
+                    "link": "/index/${id}",
+                    "id": "u:384ada000ea5",
+                    "themeCss": {
+                      "className": {
+                        "padding-and-margin:default": {
+                          "marginRight": "var(--sizes-base-2)"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "label": "修改",
+                    "level": "info",
+                    "actionType": "link",
+                    "link": "/index/${id}/edit",
+                    "id": "u:f52197c0d0f0",
+                    "themeCss": {
+                      "className": {
+                        "padding-and-margin:default": {
+                          "marginRight": "var(--sizes-base-2)"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "label": "删除",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要删除?",
+                    "api": "delete:${API_ADD}/deletebyid/$id",
+                    "id": "u:831b6d0488aa",
+                    "themeCss": {
+                      "className": {
+                        "padding-and-margin:default": {
+                          "marginRight": "var(--sizes-base-2)"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "id": "u:9b29ea599a7a"
+              }
+            ],
+            "placeholder": "-",
+            "fixed": "",
+            "id": "u:44d62fa29c80",
+            "className": ""
+          }
+        ],
+        "affixHeader": true,
+        "columnsTogglable": "auto",
+        "placeholder": "暂无数据",
+        "tableClassName": "table-db table-striped",
+        "headerClassName": "crud-table-header",
+        "footerClassName": "crud-table-footer",
+        "toolbarClassName": "crud-table-toolbar",
+        "combineNum": 0,
+        "bodyClassName": "panel-default",
+        "perPageAvailable": [
+          10
+        ],
+        "messages": {},
+        "primaryField": "id",
+        "footerToolbar": [
+          {
+            "type": "statistics"
+          },
+          {
+            "type": "pagination"
+          }
+        ],
+        "headerToolbar": [
+          {
+            "type": "bulk-actions"
+          },
+          {
+            "type": "export-csv",
+            "tpl": "内容",
+            "wrapperComponent": "",
+            "id": "u:ff0bdfed340b"
+          }
+        ],
+        "keepItemSelectionOnPageChange": false
+      }
+    ],
+    "title": "用例库",
+    "name": "page-demo1",
+    "asideResizor": true,
+    "pullRefresh": {
+      "disabled": true
+    },
+    "themeCss": {
+      "baseControlClassName": {
+        "radius:default": {
+          "top-right-border-radius": "var(--borders-radius-2)"
+        }
+      },
+      "toolbarControlClassName": {
+        "border:default": {
+          "top-border-style": "var(--borders-style-1)",
+          "left-border-style": "var(--borders-style-1)",
+          "right-border-style": "var(--borders-style-1)",
+          "bottom-border-style": "var(--borders-style-1)"
+        },
+        "radius:default": {
+          "top-left-border-radius": "var(--borders-radius-3)",
+          "top-right-border-radius": "var(--borders-radius-3)",
+          "bottom-left-border-radius": "var(--borders-radius-3)",
+          "bottom-right-border-radius": "var(--borders-radius-3)"
+        }
+      }
+    },
+    "regions": [
+      "body",
+      "header"
+    ],
+    "toolbar": [],
+    "onEvent": {
+      "init": {
+        "weight": 0,
+        "actions": []
+      }
+    },
+    "remark": {
+      "icon": "fa fa-question-circle",
+      "trigger": [
+        "hover"
+      ],
+      "className": "Remark--warning",
+      "placement": "top",
+      "content": "所有的接口"
+    }
+  }

@@ -1,0 +1,100 @@
+{
+    "type": "page",
+    "body": [
+      {
+        "type": "flex",
+        "className": "p-1",
+        "items": [
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "input-text",
+                "label": "json字符串",
+                "name": "jsonObj",
+                "id": "u:53b458aedf75",
+                "clearable": false,
+                "value": "",
+                "description": ""
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "static",
+              "display": "block",
+              "flex": "1 1 auto",
+              "flexGrow": 1
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:f677a2e8f1f6"
+          },
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "button",
+                "label": "转换",
+                "level": "primary",
+                "actionType": "ajax",
+                "api": {
+                  "method": "post",
+                  "url": "http://192.168.103.3:5555/json_handler",
+                  "headers": {
+                    "Content-Type": "application/json"
+                  },
+                  "data": {
+                    "jsonStr": "${jsonObj}"
+                  }
+                },
+                "id": "u:dac79acab0d0",
+                "size": "md",
+                "themeCss": {
+                  "className": {
+                    "padding-and-margin:default": {
+                      "marginTop": "var(--sizes-base-7)"
+                    }
+                  }
+                }                
+              }
+            ],
+            "size": "md",
+            "style": {
+              "position": "static",
+              "display": "block",
+              "flex": "1 1 auto",
+              "flexGrow": 1,
+              "maxWidth": "10%"
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:4ec2807cb99b",
+            "block": true,
+            "level": "primary",
+            "themeCss": {
+              "className": {
+                "padding-and-margin:default": {
+                  "marginTop": "var(--sizes-base-13)"
+                }
+              }
+            }
+          }
+        ],
+        "style": {
+          "position": "relative"
+        },
+        "id": "u:520c66c47779"
+      },
+      {
+        "type": "iframe",
+        "src": "${newlocation}/editor",
+        "id": "u:395054828174",
+        "width": "100%",
+        "height": "80%",
+        "hiddenOn": "${!newlocation}"
+      }
+    ],
+    "id": "u:0dcf8c090d98"
+  }

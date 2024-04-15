@@ -1,0 +1,318 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "type": "crud",
+      "id": "u:47e8568d5a58",
+      "name": "sample",
+      "api": "${API_ADD}/getapis?page=${page}&perPage=${perPage}&keywords=${keywords}",
+      "filter": {
+        "title": "",
+        "mode": "inline",
+        "wrapWithPanel": false,
+        "submitText": "",
+        "className": "m-b-sm",
+        "id": "u:fa41fd9adbad",
+        "feat": "Insert",
+        "body": [
+          {
+            "type": "flex",
+            "className": "p-1",
+            "items": [
+              {
+                "type": "container",
+                "body": [
+                  {
+                    "type": "button",
+                    "label": "新增执行计划",
+                    "actionType": "dialog",
+                    "dialog": {
+                      "size": "lg",
+                      "title": "新增执行计划",
+                      "closeOnEsc": true,
+                      "actions": [
+                        {
+                          "label": "取消",
+                          "actionType": "close",
+                          "type": "button"
+                        },
+                        {
+                          "label": "确认,点击确认会自动将form内容以name的json上报",
+                          "actionType": "confirm",
+                          "type": "button",
+                          "level": "primary"
+                        }
+                      ],
+                      "body": {
+                        "type": "form",
+                        "api": "${API_ADD}/add",
+                        "title": "常规模式",
+                        "mode": "normal",
+                        "body": [
+                          {
+                            "type": "input-text",
+                            "name": "liuname",
+                            "label": "执行计划名称",
+                            "required": true,
+                            "placeholder": "请输入执行计划名称"
+                          },
+                          {
+                            "type": "input-text",
+                            "name": "liuids",
+                            "label": "业务流id集合",
+                            "required": true,
+                            "placeholder": "请输入要组合的业务流id"
+                          }
+                        ]
+                      }
+                    },
+                    "id": "u:d5a99a6cbb90",
+                    "themeCss": {
+                      "className": {
+                        "font:default": {
+                          "color": "var(--colors-neutral-fill-11)"
+                        },
+                        "padding-and-margin:default": {
+                          "marginRight": "var(--sizes-base-10)"
+                        }
+                      }
+                    },
+                    "level": "primary"
+                  }
+                ],
+                "size": "xs",
+                "style": {
+                  "position": "static",
+                  "display": "flex",
+                  "flex": "1 1 auto",
+                  "flexGrow": 1,
+                  "flexWrap": "nowrap",
+                  "justifyContent": "flex-end"
+                },
+                "wrapperBody": false,
+                "isFixedHeight": false,
+                "isFixedWidth": false,
+                "id": "u:1175fb79e741",
+                "themeCss": {
+                  "baseControlClassName": {
+                    "padding-and-margin:default": {
+                      "marginRight": "var(--sizes-base-10)"
+                    }
+                  }
+                }
+              }
+            ],
+            "style": {
+              "position": "relative"
+            },
+            "id": "u:198b9ec8dccf"
+          }
+        ],
+        "onEvent": {
+          "click": {
+            "weight": 0,
+            "actions": []
+          }
+        }
+      },
+      "bulkActions": [
+        {
+          "label": "批量删除",
+          "type": "button",
+          "id": "u:14dbfe60909e",
+          "confirmText": "确认删除选中内容吗？",
+          "actionType": "ajax",
+          "api": "delete:${API_ADD}/apideletes/${ids}"
+        }
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "label": "ID",
+          "id": "u:2c2dab233726"
+        },
+        {
+          "name": "liuname",
+          "width": "",
+          "label": "执行计划名称",
+          "sortable": true,
+          "id": "u:cfe680fd6c40",
+          "placeholder": "-"
+        },
+        {
+          "name": "liuids",
+          "label": "业务流id集合",
+          "width": "",
+          "sortable": true,
+          "id": "u:bd58b3b802f0",
+          "placeholder": "-"
+        },
+        {
+          "type": "operation",
+          "label": "操作",
+          "width": 300,
+          "buttons": [
+            {
+              "type": "button-group",
+              "buttons": [
+                {
+                  "type": "button",
+                  "label": "查看",
+                  "level": "primary",
+                  "actionType": "link",
+                  "link": "/index/run/${id}",
+                  "id": "u:384ada000ea5",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginRight": "var(--sizes-base-2)"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "label": "修改",
+                  "level": "info",
+                  "actionType": "link",
+                  "link": "/index/run/${id}/edit",
+                  "id": "u:f52197c0d0f0",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginRight": "var(--sizes-base-2)"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "label": "删除",
+                  "level": "danger",
+                  "actionType": "ajax",
+                  "confirmText": "您确认要删除?",
+                  "api": "delete:${API_ADD}/deletebyid/$id",
+                  "id": "u:831b6d0488aa",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginRight": "var(--sizes-base-2)"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "button",
+                  "label": "查询结果",
+                  "level": "primary",
+                  "actionType": "ajax",
+                  "api": "get:${API_ADD}/getcasetogether_result/${id}",
+                  "feedback": {
+                    "title": "自动化结果详情",
+                    "body": {
+                      "type": "tpl",
+                      "tpl": "<p>业务流名称: ${togename}</p><p>结果链接: <a href='${result}' target='_blank'>${result}</a></p>"
+                    }
+                  },
+                  "messages": {
+                    "success": "",
+                    "failed": "请求失败"
+                  },
+                  "id": "u:488087cf892e",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginRight": "var(--sizes-base-2)"
+                      }
+                    }
+                  }
+                }
+              ],
+              "id": "u:9b29ea599a7a"
+            }
+          ],
+          "placeholder": "-",
+          "fixed": "",
+          "id": "u:44d62fa29c80",
+          "className": "word-break "
+        }
+      ],
+      "affixHeader": true,
+      "columnsTogglable": "auto",
+      "placeholder": "暂无数据",
+      "tableClassName": "table-db table-striped",
+      "headerClassName": "crud-table-header",
+      "footerClassName": "crud-table-footer",
+      "toolbarClassName": "crud-table-toolbar",
+      "combineNum": 0,
+      "bodyClassName": "panel-default",
+      "perPageAvailable": [
+        10
+      ],
+      "messages": {},
+      "primaryField": "id",
+      "footerToolbar": [
+        {
+          "type": "statistics"
+        },
+        {
+          "type": "pagination"
+        }
+      ],
+      "headerToolbar": [
+        {
+          "type": "bulk-actions"
+        }
+      ],
+      "keepItemSelectionOnPageChange": false
+    }
+  ],
+  "title": "执行计划列表",
+  "id": "u:f558f4c2f7c8",
+  "name": "page-demo3",
+  "asideResizor": true,
+  "pullRefresh": {
+    "disabled": true
+  },
+  "themeCss": {
+    "baseControlClassName": {
+      "radius:default": {
+        "top-right-border-radius": "var(--borders-radius-2)"
+      }
+    },
+    "toolbarControlClassName": {
+      "border:default": {
+        "top-border-style": "var(--borders-style-1)",
+        "left-border-style": "var(--borders-style-1)",
+        "right-border-style": "var(--borders-style-1)",
+        "bottom-border-style": "var(--borders-style-1)"
+      },
+      "radius:default": {
+        "top-left-border-radius": "var(--borders-radius-3)",
+        "top-right-border-radius": "var(--borders-radius-3)",
+        "bottom-left-border-radius": "var(--borders-radius-3)",
+        "bottom-right-border-radius": "var(--borders-radius-3)"
+      }
+    }
+  },
+  "regions": [
+    "body",
+    "header"
+  ],
+  "toolbar": [],
+  "onEvent": {
+    "init": {
+      "weight": 0,
+      "actions": []
+    }
+  },
+  "remark": {
+    "icon": "fa fa-question-circle",
+    "trigger": [
+      "hover"
+    ],
+    "className": "Remark--warning",
+    "placement": "top",
+    "content": "业务流的组合"
+  }
+}

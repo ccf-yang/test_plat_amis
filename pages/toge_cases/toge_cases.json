@@ -1,0 +1,210 @@
+{
+    "type": "page",
+    "id": "u:f558f4c234c8",
+    "title": "业务流组合",
+    "name": "page-demo1",
+    "data": {
+        "results_api":"",
+        "globalData": {
+          "website": "http://www.baidu.com"
+        }
+      },
+    "body": [
+      {
+        "type": "crud",
+        "draggable": false,
+        "api": "get:http://192.168.103.3:5555/getcasetogether?waitSeconds=1",
+        "perPage": 10,
+        "keepItemSelectionOnPageChange": true,
+        "maxKeepItemSelectionLength": 11,
+        "labelTpl": "${id}",
+        "orderBy": "id",
+        "orderDir": "asc",
+        "filter": {
+          "title": "条件搜索",
+          "submitText": "",
+          "body": [
+            {
+              "type": "input-text",
+              "name": "keywords",
+              "placeholder": "ID/组合名称",
+              "addOn": {
+                "label": "搜索",
+                "type": "submit",
+                "id": "u:8f1d1f44a4f9",
+                "position": "right"
+              },
+              "id": "u:1124e448b52f",
+              "size": "lg"
+            }
+          ],
+          "id": "u:c76b058182f1",
+          "feat": "Insert"
+        },
+        "quickSaveApi": "",
+        "quickSaveItemApi": "",
+        "filterTogglable": true,
+        "headerToolbar": [
+          "filter-toggler",
+          "bulkActions"
+        ],
+        "footerToolbar": [
+          "statistics",
+          "switch-per-page",
+          "pagination",
+          {
+            "type": "tpl",
+            "tpl": "当前共有 ${count} 条数据。",
+            "className": "v-middle",
+            "id": "u:380f34a20c0e"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "sortable": true,
+            "type": "text",
+            "toggled": true,
+            "id": "u:a131c18da3fb"
+          },
+          {
+            "name": "togename",
+            "label": "组合名称",
+            "fixed": "left",
+            "searchable": true,
+            "id": "u:417eadf5f71c",
+            "placeholder": "-",
+            "className": "word-break "
+          },
+          {
+            "name": "togeids",
+            "label": "组合用例序号",
+            "fixed": "left",
+            "searchable": false,
+            "id": "u:417eadf5s71c",
+            "placeholder": "-",
+            "className": "word-break "
+          },
+          {
+            "type": "operation",
+            "label": "操作",
+            "width": 100,
+            "buttons": [
+              {
+                "type": "button",
+                "icon": "fa fa-eye",
+                "actionType": "dialog",
+                "tooltip": "查看",
+                "dialog": {
+                  "title": "查看",
+                  "body": {
+                    "type": "form",
+                    "body": [
+                      {
+                        "type": "static",
+                        "name": "id",
+                        "label": "ID"
+                      },
+                      {
+                        "type": "divider"
+                      },
+                      {
+                        "type": "static",
+                        "name": "togename",
+                        "label": "组合名称"
+                      },
+                      {
+                        "type": "divider"
+                      },
+                      {
+                        "type": "static",
+                        "name": "togeids",
+                        "label": "组合用例序号"
+                      }
+                    ]
+                  }
+                },
+                "id": "u:63cc28b7423a"
+              },
+              {
+                "type": "button",
+                "icon": "fa fa-pencil",
+                "tooltip": "编辑",
+                "actionType": "drawer",
+                "drawer": {
+                  "position": "left",
+                  "size": "lg",
+                  "closeOnOutside":true,
+                  "resizable":true,
+                  "title": "编辑",
+                  "body": {
+                    "type": "form",
+                    "name": "sample-edit-form",
+                    "api": "${API_ADD}/modifytoge/$id",
+                    "body": [
+                      {
+                        "type": "input-text",
+                        "name": "id",
+                        "label": "ID",
+                        "required": true
+                      },
+                      {
+                        "type": "divider"
+                      },
+                      {
+                        "type": "input-text",
+                        "name": "togename",
+                        "label": "组合名称",
+                        "required": true
+                      },
+                      {
+                        "type": "divider"
+                      },
+                      {
+                        "type": "input-text",
+                        "name": "togeids",
+                        "label": "组合用例序号",
+                        "required": true
+                      }
+                    ]
+                  }
+                },
+                "id": "u:f0abae844720"
+              },
+              {
+                "type": "button",
+                "icon": "fa fa-times text-danger",
+                "actionType": "ajax",
+                "tooltip": "删除",
+                "confirmText": "您确认要删除该用例组合吗?",
+                "api": "delete:${API_ADD}/deletetoge/$id",
+                "id": "u:6342180e87e9"
+              },
+              {
+                "type": "button",
+                "label": "查询结果",
+                "level": "primary",
+                "actionType": "ajax",
+                "api": "get:${API_ADD}/getcasetogether_result/${id}",
+                "feedback": {
+                  "title": "自动化结果详情",
+                  "body": {
+                    "type": "tpl",
+                    "tpl": "<p>业务流名称: ${togename}</p><p>结果链接: <a href='${result}' target='_blank'>${result}</a></p>"
+                  }
+                },
+                "messages": {
+                  "success": "",
+                  "failed": "请求失败"
+                }
+              }  
+            ],
+            "toggled": true,
+            "id": "u:9dd98b7a89de"
+          }
+        ],
+        "id": "u:f406463c7fb4"
+      }
+    ]
+  }

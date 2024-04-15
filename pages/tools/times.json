@@ -1,0 +1,220 @@
+{
+    "type": "page",
+    "body": [
+      {
+        "type": "container",
+        "body": [
+          {
+            "type": "button",
+            "label": "测试自定义js",
+            "id": "u:2dcb6877d7c3",
+            "onEvent": {
+              "click": {
+                "actions": [
+                  {
+                    "ignoreError": true,
+                    "script": "console.log(\"it is a test\")\n",
+                    "actionType": "custom"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "html",
+            "tpl": "<p>当前时间： 2024-04-12 14:39:04</p>",
+            "id": "u:3d1108a8941b"
+          }
+        ],
+        "id": "u:9de26672666d"
+      },
+      {
+        "type": "flex",
+        "className": "p-1",
+        "items": [
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "input-text",
+                "label": "时间戳",
+                "name": "timestrs",
+                "id": "u:35030f6e6824"
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "static",
+              "display": "block",
+              "flex": "1 1 auto",
+              "flexGrow": 1
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:d61c379ae306"
+          },
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "button",
+                "label": "转换",
+                "onEvent": {
+                  "click": {
+                    "weight": 0,
+                    "actions": [
+                      {
+                        "ignoreError": false,
+                        "script": "console.log(context.props.data.timestrs);console.log(context.props)",
+                        "actionType": "custom"
+                      }
+                    ]
+                  }
+                },
+                "id": "u:f69a6015d9f8",
+                "size": "lg",
+                "level": "primary",
+                "themeCss": {
+                  "className": {
+                    "padding-and-margin:default": {
+                      "marginTop": "var(--sizes-base-10)"
+                    }
+                  }
+                }
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "relative",
+              "display": "flex",
+              "flex": "0 0 150px",
+              "flexBasis": "150px",
+              "overflowX": "visible",
+              "zIndex": 1,
+              "inset": "auto",
+              "flexWrap": "nowrap",
+              "justifyContent": "center"
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:23e5adc2326c"
+          },
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "input-text",
+                "label": "转换后时间",
+                "name": "timestrsafter",
+                "id": "u:7bba86de7c65"
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "static",
+              "display": "block",
+              "flex": "1 1 auto",
+              "flexGrow": 1
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:c1ae2c4306dd"
+          }
+        ],
+        "style": {
+          "position": "relative"
+        },
+        "id": "u:829ba156580f"
+      },
+      {
+        "type": "flex",
+        "className": "p-1",
+        "items": [
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "input-date",
+                "label": "日期",
+                "name": "date",
+                "id": "u:9e3051f6fe3d"
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "static",
+              "display": "block",
+              "flex": "1 1 auto",
+              "flexGrow": 1
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:9ee7458c0c76"
+          },
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "button",
+                "label": "转换成时间戳",
+                "onEvent": {
+                  "click": {
+                    "actions": []
+                  }
+                },
+                "id": "u:fba5e75c8359",
+                "level": "primary"
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "static",
+              "display": "flex",
+              "flex": "1 1 auto",
+              "flexGrow": 1,
+              "flexWrap": "nowrap",
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:86e1c4232a9d"
+          },
+          {
+            "type": "container",
+            "body": [
+              {
+                "type": "input-text",
+                "label": "时间",
+                "name": "aftertrans",
+                "id": "u:da65b8f4b4da"
+              }
+            ],
+            "size": "xs",
+            "style": {
+              "position": "static",
+              "display": "block",
+              "flex": "1 1 auto",
+              "flexGrow": 1,
+              "flexBasis": "auto"
+            },
+            "wrapperBody": false,
+            "isFixedHeight": false,
+            "isFixedWidth": false,
+            "id": "u:af31f25e9e83"
+          }
+        ],
+        "style": {
+          "position": "relative"
+        },
+        "id": "u:58b3601a4675"
+      }
+    ],
+    "title": "时间转换器",
+    "id": "u:35bb15abd6b5"
+  }
