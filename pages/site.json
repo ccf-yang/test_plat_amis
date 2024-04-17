@@ -43,7 +43,7 @@
                 "label": "test",
                 "url": "/index/test123",
                 "icon": "fa fa-window-restore",
-                "schemaApi": "get:/pages/toge_cases/test.json"
+                "schemaApi": "get:/pages/test/test.json"
               },
               {
                 "label": "查看用例",

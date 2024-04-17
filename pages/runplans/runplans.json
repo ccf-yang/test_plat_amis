@@ -153,6 +153,22 @@
           "width": 300,
           "buttons": [
             {
+              "type": "button",
+              "label": "执行",
+              "level": "primary",
+              "actionType": "ajax",
+              "confirmText": "您确认要执行该计划吗?",
+              "api": "post:${API_ADD}/runcaseplanbyid/$id",
+              "id": "u:831b6fsdaaa",
+              "themeCss": {
+                "className": {
+                  "padding-and-margin:default": {
+                    "marginRight": "var(--sizes-base-2)"
+                  }
+                }
+              }
+            },
+            {
               "type": "button-group",
               "buttons": [
                 {

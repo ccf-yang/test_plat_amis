@@ -63,7 +63,6 @@
                   "type": "button",
                   "label": "获取最新时间",
                   "id": "u:bdb26d20c896",
-                  "level":"primary",
                   "themeCss": {
                     "className": {
                       "padding-and-margin:default": {
@@ -110,7 +109,7 @@
               "type": "input-datetime",
               "name": "choosetime",
               "label": "日期+时间",
-              "value": "${timestamp}",
+              "value": "1591326307",
               "id": "u:7b157f4e978d"
             }
           ],
@@ -234,7 +233,7 @@
               "type": "button",
               "label": "转换",
               "actionType": "ajax",
-              "api": "get:/timestamp/formatTime/${pretimestamp}",
+              "api": "get:/timestamp/format2?timestamp=${pretimestamp}",
               "onSuccess": {
                 "actionType": "reload"
               },

@@ -1,0 +1,67 @@
+{
+    "tips1":"如果想用js,可以在server.js中引入其他js文件,然后形成接口,就可以在通过button接口请求方式访问js的内容了,请求也不用加host,直接如get:/timestamp使用",
+    "tips2":"如果无业务相关的接口,都可以写在routes里面,然后在server.js里面导入使用该接口",
+    "tips3":"接口返回了json后,就可以直接${key}调用返回的结果的值了,多层用.取值。",
+    "tips4":"initApi可以用来刚开始加载时就请求某个接口,然后可以直接使用json中的字段进行填充",
+    "tips5":{"get的urlparam的ajax请求举例,不用问话":{
+                                "type": "button",
+                                "label": "获取最新时间",
+                                "id": "u:bdb26d20c896",
+                                "actionType": "ajax",
+                                "api": "get:/timestamp/${urlparams}",
+                                "onSuccess": {
+                                "actionType": "reload"
+                                }
+                            }},
+    "tips6":{"get的queryparam的ajax请求举例,加个问话":{
+                                "type": "button",
+                                "label": "转换",
+                                "actionType": "ajax",
+                                "api": "get:/timestamp/format2?timestamp=${pretimestamp}",
+                                "onSuccess": {
+                                "actionType": "reload"
+                                },
+                                "id": "u:589ea00cad26",
+                                "level": "primary"
+                            }},
+    "tips7":{"post的bodyparam,ajax请求举例,放在data里面": {
+                                "type": "button",
+                                "label": "获取key",
+                                "level": "primary",
+                                "actionType": "ajax",
+                                "api": {
+                                "method":"post",
+                                "url": "/timestamp/extractKeys",
+                                "headers": {
+                                    "Content-Type": "application/json"
+                                },
+                                "data": {
+                                    "json": "${jsonObj1}"
+                                }
+                                },
+                                "id": "u:dac79acab0d0",
+                                "onSuccess": {
+                                "actionType": "reload"
+                                },
+                                "size": "md"
+                            }},
+    "tips8":{"简单的api一行的请求":{
+                                "api": "get:/amis/api/initData", 
+                                "api": "post:/amis/api/initData", 
+                                "api": "put:/amis/api/initData", 
+                                "api": "delete:/amis/api/initData" 
+                            }},
+    "tips9":{"复杂些的api请求":[
+                    {"api中的参数有":"当前请求的 api 对象,一般包含下面几个属性:    url:当前接口 Api 地址、method:当前请求的方式、data:请求的数据体(bodyparam)、headers:请求的头部信息"},
+                    {"复杂api请求模板":{
+                        "api": {
+                            "method": "get/post/put/delete",
+                            "url": "xxxx/${urlparam}",
+                            "data": {"封装的key":"封装的value,在后端拿到的就是key和value,data不会作为key传过去"}
+                                }
+                            }
+                    }]
+                },
+    "tips9"
+
+}
