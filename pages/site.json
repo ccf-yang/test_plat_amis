@@ -94,6 +94,27 @@
               }
             ]
           }]},
+          {
+            "label": "UI测试管理",
+            "children": [
+              {
+                "label": "UI 自动化测试",
+                "url": "uitest",
+                "icon": "fa fa-indent",
+                "schema": {
+                  "type": "page",
+                  "title": "UI用例",
+                  "body": "UI用例"
+                },
+                "children": [
+                  {
+                    "label": "UI用例管理",
+                    "icon": "fa fa-tablet",
+                    "url": "uiauto",
+                    "schemaApi": "get:/pages/uitests/test.json"
+                  }
+                ]
+              }]},
 
       {
         "label": "工具箱",

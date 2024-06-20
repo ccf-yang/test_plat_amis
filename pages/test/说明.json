@@ -3,7 +3,7 @@
     "tips2":"如果无业务相关的接口,都可以写在routes里面,然后在server.js里面导入使用该接口",
     "tips3":"接口返回了json后,就可以直接${key}调用返回的结果的值了,多层用.取值。",
     "tips4":"initApi可以用来刚开始加载时就请求某个接口,然后可以直接使用json中的字段进行填充",
-    "tips5":{"get的urlparam的ajax请求举例,不用问话":{
+    "tips5":{"get的urlparam的ajax请求举例,不用问号":{
                                 "type": "button",
                                 "label": "获取最新时间",
                                 "id": "u:bdb26d20c896",
@@ -13,7 +13,7 @@
                                 "actionType": "reload"
                                 }
                             }},
-    "tips6":{"get的queryparam的ajax请求举例,加个问话":{
+    "tips6":{"get的queryparam的ajax请求举例,加个问号":{
                                 "type": "button",
                                 "label": "转换",
                                 "actionType": "ajax",
@@ -62,6 +62,36 @@
                             }
                     }]
                 },
-    "tips9"
+    "tips10":{"按键都有点击后大刷新的功能,配置onEvent即可,如下":[{"onEvent": {
+        "click": {
+          "weight": 0,
+          "actions": [
+            {
+              "ignoreError": false,
+              "actionType": "refresh"
+            }
+          ]
+        }
+      }
+    }]},
+    "tips11":{"按钮点击后执行js脚本等待10s再刷新的自定义脚本使用方法":{
+      "label": "确认",
+      "actionType": "confirm",
+      "type": "button",
+      "level": "primary",
+      "onEvent": {
+        "click": {
+          "weight": 0,
+          "actions": [
+            {
+              "script": "function delayThenRefresh(delay) {\n  setTimeout(function() {\n    console.log('Wait for 100ms');\n    doAction({\n      actionType: 'refresh'\n    });\n  }, delay);\n}\n\n// 调用函数，延迟100ms后刷新页面\ndelayThenRefresh(100);",
+              "actionType": "custom",
+              "ignoreError": false,
+              "args": {}
+            }
+          ]
+        }
+      }
+    }}
 
 }

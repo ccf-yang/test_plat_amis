@@ -15,7 +15,7 @@ app.use('/public', express.static('public'));
 app.use('/pages', express.static('pages'));
 app.use('/sdk', express.static('sdk'));
 
-// 2、使用自定义js，将 /timestamp 路由与 timestampRouter 关联
+// 2、使用自定义js，将 /timestamp 路由与 timestampRouter 关联,后面就可以通过访问/timestamp/timestamp.js中的uri接在后面的接口了。
 app.use('/timestamp', timestampRouter);
 
 app.get('/*', function (req, res) {

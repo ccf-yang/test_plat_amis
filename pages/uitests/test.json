@@ -1,0 +1,469 @@
+{
+    "type": "page",
+    "title": "UI测试管理列表",
+    "body": [
+      {
+        "type": "crud",
+        "id": "u:47e8568d5a58",
+        "name": "sample",
+        "api": "${API_ADD}/getuitasks?page=${page}&perPage=${perPage}&keywords=${keywords}",
+        "filter": {
+          "title": "",
+          "mode": "inline",
+          "wrapWithPanel": false,
+          "submitText": "",
+          "className": "m-b-sm",
+          "id": "u:fa41fd9adbad",
+          "feat": "Insert",
+          "body": [
+            {
+              "type": "flex",
+              "className": "p-1",
+              "items": [
+                {
+                  "type": "container",
+                  "body": [
+                    {
+                      "type": "button",
+                      "label": "新增UI测试",
+                      "actionType": "dialog",
+                      "dialog": {
+                        "size": "lg",
+                        "title": "新增UI测试",
+                        "closeOnEsc": true,
+                        "actions": [
+                          {
+                            "label": "取消",
+                            "actionType": "close",
+                            "type": "button"
+                          },
+                          {
+                            "label": "确认",
+                            "actionType": "confirm",
+                            "type": "button",
+                            "level": "primary",
+                            "onEvent": {
+                              "click": {
+                                "weight": 0,
+                                "actions": [
+                                  {
+                                    "script": "function delayThenRefresh(delay) {\n  setTimeout(function() {\n    console.log('Wait for 100ms');\n    doAction({\n      actionType: 'refresh'\n    });\n  }, delay);\n}\n\n// 调用函数，延迟100ms后刷新页面\ndelayThenRefresh(100);",
+                                    "actionType": "custom",
+                                    "ignoreError": false,
+                                    "args": {}
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "body": {
+                            "type": "form",
+                            "api": "${API_ADD}/adduicases",
+                            "method":"post",
+                            "title": "常规模式",
+                            "mode": "normal",
+                            "body": [
+                              {
+                                "type": "input-text",
+                                "name": "name",
+                                "label": "UI测试名称",
+                                "required": true,
+                                "placeholder": "请输入UI测试名称",
+                                "id": "u:801e42862967"
+                              },
+                              {
+                                "type": "input-tag",
+                                "label": "UI测试范围",
+                                "name": "tag",
+                                "options": [
+                                  {"label": "登录", "value": "登录"},
+                                  {"label": "模板管理", "value": "模板管理"},
+                                  {"label": "个人中心/设置", "value": "设置"},
+                                  {"label": "云存储管理", "value": "云存储管理"},
+                                  {"label": "实例管理", "value": "实例管理"},
+                                  {"label": "费用中心", "value": "费用中心"},
+                                  {"label": "算力市场/explorer", "value": "算力市场"},
+                                  {"label": "官网", "value": "官网"},
+                                  {"label": "忘记密码和注册", "value": "忘记密码和注册"},
+                                  {"label": "镜像管理(仅国内)",  "value": "镜像管理"}
+                                  ],
+                                "id": "u:525276e65a6d",
+                                "optionsTip": "最近您使用的标签",
+                                "clearable": true
+                              },
+                              {
+                                "type": "select",
+                                "label": "测试环境",
+                                "name": "select",
+                                "options": [
+                                  {
+                                    "label": "GPU CLOUD TEST",
+                                    "value": "GPU CLOUD TEST"
+                                  },
+                                  {
+                                    "label": "GPU CLOUD ONLINE",
+                                    "value": "GPU CLOUD ONLINE"
+                                  },
+                                  {
+                                    "label": "GPU CLOUD OVERSEA TEST",
+                                    "value": "GPU CLOUD OVERSEA TEST"
+                                  },
+                                  {
+                                    "label": "GPU CLOUD OVERSEA ONLINE",
+                                    "value": "GPU CLOUD OVERSEA ONLINE"
+                                  }
+                                ],
+                                "id": "u:06225426b1eb",
+                                "multiple": false,
+                                "value": "GPU CLOUD OVERSEA TEST"
+                              }
+                            ],
+                            "id": "u:27e248338abb",
+                            "actions": [
+                              {
+                                "type": "submit",
+                                "label": "提交",
+                                "primary": true,
+                                "id": "u:55a9fd8c52fc"
+                              }
+                            ],
+                            "feat": "Insert"
+                          }
+                      },
+                      "id": "u:d5a99a6cbb90",
+                      "themeCss": {
+                        "className": {
+                          "font:default": {
+                            "color": "var(--colors-neutral-fill-11)"
+                          },
+                          "padding-and-margin:default": {
+                            "marginRight": "var(--sizes-base-10)"
+                          }
+                        }
+                      },
+                      "level": "primary"
+                    },
+                    {
+                        "type": "button",
+                        "label": "刷新",
+                        "onEvent": {
+                          "click": {
+                            "actions": [
+                              {
+                                "ignoreError": false,
+                                "actionType": "refresh"
+                              }
+                            ]
+                          }
+                        },
+                        "id": "u:beee9816a4c6",
+                        "level": "primary"
+                      }
+                  ],
+                  "size": "xs",
+                  "style": {
+                    "position": "static",
+                    "display": "flex",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexWrap": "nowrap",
+                    "justifyContent": "flex-end"
+                  },
+                  "wrapperBody": false,
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:1175fb79e741",
+                  "themeCss": {
+                    "baseControlClassName": {
+                      "padding-and-margin:default": {
+                        "marginRight": "var(--sizes-base-10)"
+                      }
+                    }
+                  }
+                }
+              ],
+              "style": {
+                "position": "relative"
+              },
+              "id": "u:198b9ec8dccf"
+            }
+          ],
+          "onEvent": {
+            "click": {
+              "weight": 0,
+              "actions": []
+            }
+          }
+        },
+        "bulkActions": [
+          {
+            "label": "批量删除",
+            "type": "button",
+            "id": "u:14dbfe60909e",
+            "confirmText": "确认删除选中内容吗？",
+            "actionType": "ajax",
+            "api": "delete:${API_ADD}/uideletes/${ids}"
+          }
+        ],
+        "columns": [
+          {
+            "name": "id",
+            "label": "ID",
+            "id": "u:2c2dab233726"
+          },
+          {
+            "name": "name",
+            "label": "用例名称",
+            "id": "u:f4684fae50ff",
+            "placeholder": "-"
+          },
+          {
+            "name": "uicases",
+            "width": "",
+            "label": "执行范围",
+            "sortable": true,
+            "id": "u:cfe680fd6c40",
+            "placeholder": "-"
+          },
+          {
+            "name": "createat",
+            "label": "创建时间",
+            "width": "",
+            "sortable": true,
+            "id": "u:bd58b3b802f0",
+            "placeholder": "-"
+          },
+          {
+            "name": "select_env",
+            "label": "测试环境",
+            "width": "",
+            "sortable": true,
+            "id": "u:bd58b3b802sf0",
+            "placeholder": "-"
+          },
+          {
+            "type": "operation",
+            "label": "操作",
+            "width": 300,
+            "buttons": [
+              {
+                "type": "button",
+                "label": "执行",
+                "level": "primary",
+                "actionType": "ajax",
+                "confirmText": "您确认要执行该计划吗?",
+                "api": "post:${API_ADD}/runuicasebyid/$id",
+                "id": "u:831b6fsdaaa",
+                "themeCss": {
+                  "className": {
+                    "padding-and-margin:default": {
+                      "marginRight": "var(--sizes-base-2)"
+                    }
+                  }
+                }
+              },
+              {
+                "type": "button-group",
+                "buttons": [
+                  {
+                    "type": "button",
+                    "label": "删除",
+                    "level": "danger",
+                    "actionType": "ajax",
+                    "confirmText": "您确认要删除?",
+                    "api": "delete:${API_ADD}/deleteuibyid/$id",
+                    "id": "u:831b6d0488aa",
+                    "themeCss": {
+                      "className": {
+                        "padding-and-margin:default": {
+                          "marginRight": "var(--sizes-base-2)"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "label": "查询结果",
+                    "level": "primary",
+                    "actionType": "ajax",
+                    "api": "get:${API_ADD}/getuiresults/${id}",
+                    "feedback": {
+                      "title": "结果详情",
+                      "size": "lg",
+                      "closeOnEsc":true,
+                      "actions":[],
+                      "body": [
+                        {
+                          "type": "tpl",
+                          "tpl": "<p>名称: ${uiname}</p><p>运行状态: ${runstatus}</p>",
+                          "id": "u:4c551682fabf"
+                        },
+                        {
+                          "type": "collapse-group",
+                          "activeKey": [
+                            "1"
+                          ],
+                          "body": [
+                            {
+                              "type": "collapse",
+                              "key": "1",
+                              "active": true,
+                              "header": "结果视频链接",
+                              "body": [
+                                {
+                                  "type": "tpl",
+                                  "tpl": "<a href='${result}' target='_blank'>${result}</a>",
+                                  "wrapperComponent": "",
+                                  "inline": false,
+                                  "id": "u:a67d101b9058"
+                                }
+                              ],
+                              "id": "u:c5aac521065a"
+                            },
+                            {
+                              "type": "collapse",
+                              "key": "2",
+                              "header": "日志内容",
+                              "body": [
+                                {
+                                  "type": "button",
+                                  "label": "查询日志",
+                                  "actionType": "ajax",
+                                  "api": "get:${API_ADD}/getlogs/${id}",
+                                  "id": "u:1f831401bc2a",
+                                  "level": "dark"
+                                },
+                                {
+                                  "type": "editor",
+                                  "label": "log info",
+                                  "name": "editor",
+                                  "id": "u:bf9030ac0e26",
+                                  "language": "plaintext",
+                                  "value": "${messageinfo}"
+                                }
+                              ],
+                              "id": "u:b92638e062cd"
+                            }
+                          ],
+                          "id": "u:6905d2411eb5"
+                        },
+                        {
+                          "type": "divider",
+                          "id": "u:20ebe8a202a0"
+                        },
+                        {
+                          "type": "video",
+                          "id": "u:9fa5e48d0913",
+                          "autoPlay": false,
+                          "rates": [
+                            1,2,5,10,20
+                          ],
+                          "jumpFrame": true,
+                          "jumpBufferDuration": 0,
+                          "src": "${result}",
+                          "poster": "data:image/svg+xml,%3C%3Fxml version='1.0' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg t='1631083237695' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='2420' xmlns:xlink='http://www.w3.org/1999/xlink' width='1024' height='1024'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C/style%3E%3C/defs%3E%3Cpath d='M959.872 128c0.032 0.032 0.096 0.064 0.128 0.128v767.776c-0.032 0.032-0.064 0.096-0.128 0.128H64.096c-0.032-0.032-0.096-0.064-0.128-0.128V128.128c0.032-0.032 0.064-0.096 0.128-0.128h895.776zM960 64H64C28.8 64 0 92.8 0 128v768c0 35.2 28.8 64 64 64h896c35.2 0 64-28.8 64-64V128c0-35.2-28.8-64-64-64z' p-id='2421' fill='%23bfbfbf'%3E%3C/path%3E%3Cpath d='M832 288c0 53.024-42.976 96-96 96s-96-42.976-96-96 42.976-96 96-96 96 42.976 96 96zM896 832H128V704l224-384 256 320h64l224-192z' p-id='2422' fill='%23bfbfbf'%3E%3C/path%3E%3C/svg%3E"
+                        }
+                      ]
+                    },
+                    "messages": {
+                      "success": "",
+                      "failed": "请求失败"
+                    },
+                    "id": "u:488087cf892e",
+                    "themeCss": {
+                      "className": {
+                        "padding-and-margin:default": {
+                          "marginRight": "var(--sizes-base-2)"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "id": "u:9b29ea599a7a"
+              }
+            ],
+            "placeholder": "-",
+            "fixed": "",
+            "id": "u:44d62fa29c80",
+            "className": "word-break "
+          }
+        ],
+        "affixHeader": true,
+        "columnsTogglable": "auto",
+        "placeholder": "暂无数据",
+        "tableClassName": "table-db table-striped",
+        "headerClassName": "crud-table-header",
+        "footerClassName": "crud-table-footer",
+        "toolbarClassName": "crud-table-toolbar",
+        "combineNum": 0,
+        "bodyClassName": "panel-default",
+        "perPageAvailable": [
+          10
+        ],
+        "messages": {},
+        "primaryField": "id",
+        "footerToolbar": [
+          {
+            "type": "statistics"
+          },
+          {
+            "type": "pagination"
+          }
+        ],
+        "headerToolbar": [
+          {
+            "type": "bulk-actions"
+          }
+        ],
+        "keepItemSelectionOnPageChange": false
+      }
+    ],
+    "id": "u:f558f4c2f7c8",
+    "name": "page-demo3",
+    "asideResizor": true,
+    "pullRefresh": {
+      "disabled": false
+    },
+    "themeCss": {
+      "baseControlClassName": {
+        "radius:default": {
+          "top-right-border-radius": "var(--borders-radius-2)"
+        }
+      },
+      "toolbarControlClassName": {
+        "border:default": {
+          "top-border-style": "var(--borders-style-1)",
+          "left-border-style": "var(--borders-style-1)",
+          "right-border-style": "var(--borders-style-1)",
+          "bottom-border-style": "var(--borders-style-1)"
+        },
+        "radius:default": {
+          "top-left-border-radius": "var(--borders-radius-3)",
+          "top-right-border-radius": "var(--borders-radius-3)",
+          "bottom-left-border-radius": "var(--borders-radius-3)",
+          "bottom-right-border-radius": "var(--borders-radius-3)"
+        }
+      }
+    },
+    "regions": [
+      "body",
+      "header"
+    ],
+    "toolbar": [],
+    "onEvent": {
+      "init": {
+        "weight": 0,
+        "actions": []
+      }
+    },
+    "remark": {
+      "icon": "fa fa-question-circle",
+      "trigger": [
+        "hover"
+      ],
+      "className": "Remark--warning",
+      "placement": "top",
+      "content": "选定模块，对指定模块进行UI自动化测试，通过观察测试结果视频，判断UI或者接口逻辑是否异常"
+    }
+  }
